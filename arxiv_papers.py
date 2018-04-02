@@ -109,7 +109,7 @@ def add_papers_to_file(new_papers, filename = 'papers.md'):
     d = {'Sublist': sublists, 'New': new_papers}
     df = pd.DataFrame(data=d)
 
-    filepath = '/Users/annagolubeva/Desktop/oldwebsite/physicsml.github.io/develop/content/pages/'
+    filepath = '/Users/annagolubeva/Desktop/physicsml.github.io/develop/content/pages/'
        
     # buffer the file    
     with codecs.open(filepath+filename, 'r', 'utf-8') as fh0:
@@ -132,7 +132,7 @@ def add_to_csv_list(afp, indices_selected, filename = 'papers_ids_titles_sublist
     import pandas as pd
     import codecs # important to handle non-standard characters and unicode encoding properly (damn French names!)
 
-    filepath = '/Users/annagolubeva/Desktop/oldwebsite/physicsml.github.io/develop/content/pages/'
+    filepath = '/Users/annagolubeva/Desktop/physicsml.github.io/develop/content/Pages/'
 
     if (filename=='papers_ids_titles_sublists.csv'):
         sublistn = len(indices_selected[0])*[0]+len(indices_selected[1])*[1]+len(indices_selected[2])*[2]
