@@ -23,13 +23,17 @@ def harvest_arxiv(id_list=False):
     else:
     	# for documentation see https://arxiv.org/help/api/user-manual#detailed_examples
     	search_query = ('%28cat:cond-mat.dis-nn+OR+'
-                'cat:cond-mat.stat-mech+OR+'
-                'cat:cond-mat.str-el+OR+'
-                'cat:physics.comp-ph+OR+'
-                'cat:quant-ph%29'
-                '+AND+'
-                '%28cat:cs.LG+OR+'
-                'cat:stat.ML%29')
+                		   'cat:cond-mat.stat-mech+OR+'
+                		   'cat:cond-mat.str-el+OR+'
+                		   'cat:physics.comp-ph+OR+'
+                		   'cat:quant-ph%29'
+                			'+AND+'
+                        '%28%28cat:cs.LG+OR+'
+                              'cat:stat.ML%29+OR+'
+                        '%28abs:machine+AND+abs:learning%29+OR+'
+                        '%28abs:neural+AND+abs:network%29%29') 
+                        #'%28cat:cs.LG+OR+'
+                        #'cat:stat.ML%29')
     
     	query = 'search_query=%s&sortBy=%s&start=%i&max_results=%i' % (search_query, 
                                                                sort_by,
