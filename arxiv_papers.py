@@ -9,7 +9,7 @@ def harvest_arxiv(id_list=False):
     # search parameters
     start_index = 0               # 0 = most recent API result
     max_index = 1000              # upper bound on paper index we will fetch
-    results_per_iteration = 100   # passed to arxiv API
+    results_per_iteration = 400   # passed to arxiv API
     sort_by = 'submittedDate'   # submittedDate, lastUpdatedDate, relevance
     # ISSUE: sortBy does not work!!!
     
@@ -100,8 +100,8 @@ def formatted_block(afp, indices):
         
     return formatted_block
 
-def add_papers_to_file(new_papers, filename = 'papers.md'):
-    "Add new publications to lists in file papers.md"
+def add_papers_to_file(new_papers, filename = 'papers-19.md'):
+    "Add new publications to lists in file papers-19.md"
 
     import pandas as pd
     import codecs # important to handle non-standard characters and unicode encoding properly (damn French names!)
@@ -113,7 +113,7 @@ def add_papers_to_file(new_papers, filename = 'papers.md'):
     d = {'Sublist': sublists, 'New': new_papers}
     df = pd.DataFrame(data=d)
 
-    filepath = '/Users/annagolubeva/Desktop/physicsml.github.io/develop/content/pages/'
+    filepath = '/Users/annagolubeva/Desktop/physicsml.github.io/develop/content/Pages/'
        
     # buffer the file    
     with codecs.open(filepath+filename, 'r', 'utf-8') as fh0:
